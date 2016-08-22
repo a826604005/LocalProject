@@ -1,0 +1,10 @@
+<div class="scroll-blank1" ng-show="total == 1 && !scrollToatlFlag"></div>
+<div ng-show="isLoadmore" class="scroll-box1">
+    <div class="scroll-box4" ng-click="forceLoadMore()">加载更多</div>
+</div>
+<div ng-show="isLoading" class="scroll-box2">
+    <img class="img-loading" src="resources/images/projects/loading.png">
+</div>
+<div ng-show="loadComplete" class="scroll-box3">
+    <span class="complete-msg">没有更多内容了</span>
+</div>

@@ -4,7 +4,7 @@ module.exports = function (grunt) {
     app: '../app/',
     markup: 'jade/',
     styles: 'less/',
-    scripts: 'master/js/'
+    scripts: 'resources/js/'
   }
   // 构建任务配置
   grunt.initConfig({
@@ -13,27 +13,27 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       html: {
-        files: ['app/views/**/*.html'],
+        files: ['view/**/*.html'],
         options: {livereload:true}
       },
       css: {
-        files: ['app/css/*.css'],
+        files: ['resources/**/*.css'],
         options: {livereload:true}
       },
       js: {
-        files: ['master/js/**/*.js'],
+        files: ['resources/js/**/*.js'],
         tasks: ['concat'],
         options: {livereload:true}
       },
       sass: {
-        files: ['app/less/*.less'],
+        files: ['resources/less/*.less'],
         tasks: ['less'],
         options: {livereload:true}
       }
     },
     less: {
       dev: {
-        src: ['app/less/*.less'],
+        src: ['resources/less/*.less'],
         dest: 'app/css/custom.css'
       }
     },
@@ -43,15 +43,9 @@ module.exports = function (grunt) {
       },
       dist1: {
         src: [
-                'master/app.module.js',
-                // template modules
-                paths.scripts + 'modules/**/*.module.js',
-                paths.scripts + 'modules/**/*.js',
-                // custom modules
-                paths.scripts + 'custom/**/*.module.js',
-                paths.scripts + 'custom/**/*.js'
+                paths.scripts + '**/*.js'
               ],
-        dest: 'app/js/app2.js'
+        dest: 'app/js/app.js'
       }
     },
     //压缩js
@@ -138,12 +132,26 @@ module.exports = function (grunt) {
           }
         ]
       }
+    },
+    bower: {
+      install: {
+        options: {
+          targetDir: './vendor',
+          layout: 'byComponent',
+          install: true,
+          verbose: false,
+          cleanTargetDir: false,
+          cleanBowerDir: false,
+          bowerOptions: {}
+        }
+      }
     }
-
 
   });
 
   // 加载指定插件任务
+  grunt.loadNpmTasks('grunt-bower-task');
+
   grunt.loadNpmTasks('grunt-contrib-concat');
   //grunt.loadNpmTasks('grunt-contrib-uglify');
   //grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -154,8 +162,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default',['watch']);
-
-  // 默认执行的任务
-  //grunt.registerTask('default', ['concat']);
 
 };
