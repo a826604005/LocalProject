@@ -1,0 +1,42 @@
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.12/css/jquery.Jcrop.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.12/js/jquery.Jcrop.min.js"></script>
+
+
+<style>
+    .ng-jcrop-image-wrapper { display: inline-block; }
+    .ng-jcrop-thumbnail-wrapper { display: inline-block; }
+</style>
+
+<div class="container">
+    <h1>ng-jcrop demo page</h1>
+    <div class="row" ng-controller="CropperImageCtrlUpload">
+        <div class="one-half column">
+            <h2>Upload an image</h2>
+            <input type="file" ng-jcrop-input="upload" />
+            <div ng-jcrop="obj.src" ng-jcrop-config-name="upload" selection="obj.selection" thumbnail="obj.thumbnail"></div>
+        </div>
+
+        <div class="one-half column">
+            <table>
+                <tbody>
+                <tr>
+                    <td><strong>x</strong>: <span ng-bind="obj.selection[0]"></span></td>
+                    <td><strong>y</strong>: <span ng-bind="obj.selection[1]"></span></td>
+                    <td><strong>x2</strong>: <span ng-bind="obj.selection[2]"></span></td>
+                    <td><strong>y2</strong>: <span ng-bind="obj.selection[3]"></span></td>
+                    <td><strong>w</strong>: <span ng-bind="obj.selection[4]"></span></td>
+                    <td><strong>h</strong>: <span ng-bind="obj.selection[5]"></span></td>
+                </tr>
+                </tbody>
+            </table>
+            <label><input type="checkbox" ng-model="obj.thumbnail" /> Thumbnail</label>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

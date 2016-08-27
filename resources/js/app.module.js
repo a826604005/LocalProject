@@ -3,7 +3,8 @@
 
     angular
         .module('localProject', [
-            'ui.router'
+            'ui.router',
+            'ngJcrop'
         ])
         .constant('API_HOST', 'http://dataapi-staging.fellowplus.com')
         .constant('PASSPORT_HOST', 'https://passport.fellowplus.com')

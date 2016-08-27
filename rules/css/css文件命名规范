@@ -1,0 +1,33 @@
+1）　
+主要的 master.css
+布局，版面 layout.css
+专栏 columns.css
+文字 font.css
+打印样式 print.css
+主题 themes.css
+
+2）
+reset.css // 对浏览器的默认样式进行重设
+layout.css // 管理页面的布局
+typeset.css // 图文的编排
+color.css // 统一管理颜色的搭配
+print.css // 打印效果样式
+ie.css // 把对ie的hack单独分开
+
+3）
+reset.css
+header.css // 头部的所有样式
+container.css // 除头部/底部外的中间区域样式
+footer.css // 底部样式
+print.css
+ie.css
+
+4)
+reset.css /*页面样式充值*/
+header.css /*全站头部样式*/
+footer.css /*全站尾部样式*/
+public.css /*全站公共模块样式*/
+index.css /*首页特有样式*/
+container.css /*二级及以下主体样式*/
+print.css /*打印样式*/
+ie.css /*IE hack*/

@@ -1,18 +1,38 @@
-function mainCtrl($scope) {
+(function(){
+  function mainCtrl($scope) {
 
-}
-function homeCtrl($scope) {
+  }
+  function homeCtrl($scope) {
 
-}
-function menuCtrl($scope) {
+  }
+  function newsCtrl($scope) {
 
-}
-function topnavbarCtrl($scope) {
+  }
+  function menuCtrl($scope) {
 
-}
-angular
+  }
+  function topnavbarCtrl($scope) {
+
+  }
+  function CropperImageCtrlUpload($scope,DateService){
+    console.log(DateService.format(new Date(),'yyyy-mm-dd'));
+    $scope.obj = {src:"", selection: [], thumbnail: true};
+  }
+  angular
     .module('localProject')
-    .controller('mainCtrl', mainCtrl)
-    .controller('homeCtrl', homeCtrl)
-    .controller('topnavbarCtrl', topnavbarCtrl)
-    .controller('menuCtrl', menuCtrl)
+    .controller('mainCtrl', ['$scope',mainCtrl])
+    .controller('homeCtrl', ['$scope',homeCtrl])
+    .controller('topnavbarCtrl', ['$scope',topnavbarCtrl])
+    .controller('menuCtrl', ['$scope',menuCtrl])
+    .controller('newsCtrl', ['$scope',newsCtrl])
+    .controller('CropperImageCtrlUpload',['$scope','DateService',CropperImageCtrlUpload])
+    .config(function(ngJcropConfigProvider){
+      ngJcropConfigProvider.setJcropConfig('upload', {
+        bgColor: 'black',
+        bgOpacity: .4,
+        aspectRatio: 1,
+        maxWidth: 300,
+        maxHeight: 300
+      });
+    })
+})();
