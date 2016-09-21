@@ -1,0 +1,106 @@
+<header id="header">
+  <ul class="clearfix">
+    <li class="logo">
+      <i class="icon icon-logo"></i>
+      <a class="logo-text" href="Javascript:;" ui-sref="home">
+        <strong>Fellow</strong><span>Data</span>
+      </a>
+    </li>
+    <li>
+      <a href="Javascript:;" ui-sref="project_list">项目</a>
+    </li>
+    <li class="dropdown app-download-lg" dropdown>
+      <a class="inactive" href="Javascript:;">融资事件</a>
+      <i class="icon-arrow-up"></i>
+      <div class="dropdown-list">
+        <img src="//fellowdata-file.oss-cn-hangzhou.aliyuncs.com/static/qrcode-app-download.png
+
+        ">
+        <div>
+          <p>扫码下载 <strong>FellowData APP</strong></p>
+          <p>实时获取行业融资新动态</p>
+        </div>
+      </div>
+    </li>
+    <li>
+      <a class="inactive" href="Javascript:;">投资机构</a>
+    </li>
+    <li class="dropdown" dropdown>
+      <a href="Javascript:;">发现</a>
+      <i class="icon-arrow-up"></i>
+      <ul class="dropdown-list">
+        <li>
+          <a href="#/package/ios/list">苹果应用</a>
+        </li>
+        <li>
+          <a href="#/package/android/list">安卓应用</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="right clearfix">
+      <ul class="actions">
+        <li>
+          <div ng-if="vm.isSearchShow" class="search-group">
+            <i class="icon icon-search"></i>
+            <input
+              ng-keyup="vm.search($event)"
+              ng-model="vm.keyword"
+              placeholder="输入项目名"
+              type="search">
+          </div>
+        </li>
+        <li class="dropdown" dropdown>
+          <i class="icon icon-avatar"></i>
+          <i class="icon-arrow-up"></i>
+          <ul class="dropdown-list">
+            <li ng-if="vm.canSendPrivateLetter()">
+              <a href="//fellowplus.com/pm" target="_blank">私信</a>
+            </li>
+            <li ng-if="vm.canGetProjectTimeline()">
+              <a href="//fellowplus.com/my-project" target="_blank">项目动态</a>
+            </li>
+            <li ng-if="vm.canGetProjects()">
+              <a href="//fellowplus.com/projects" target="_blank">收到的项目</a>
+            </li>
+            <li ng-if="vm.canChangeRole()">
+              <a href="//passport.fellowplus.com/change-role" target="_blank">更改身份</a>
+            </li>
+            <li>
+              <a href="//passport.fellowplus.com/preferences" target="_blank">设置</a>
+            </li>
+            <li>
+              <a href="//passport.fellowplus.com/logout">退出登录</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown" dropdown>
+          <i class="icon icon-collapse"></i>
+          <i class="icon-arrow-up"></i>
+          <ul class="dropdown-list">
+            <li>
+              <a href="//fellowplus.com/investors/" target="_blank">投资人</a>
+            </li>
+            <li>
+              <a href="//fellowplus.com/special/video-roadshow" target="_blank">视频融资</a>
+            </li>
+            <li>
+              <a href="//fellowplus.com/campaign/8/" target="_blank">活动</a>
+            </li>
+          </ul>
+        </li>
+        <li ng-show="vm.isAppDownloadShow" class="dropdown app-download" dropdown>
+          <a href="Javascript:;">APP下载</a>
+          <i class="icon-arrow-up"></i>
+          <div class="dropdown-list">
+            <img src="//fellowdata-file.oss-cn-hangzhou.aliyuncs.com/static/qrcode-app-download.png
+
+            ">
+            <p>扫码下载</p>
+            <strong>FellowData APP</strong>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</header>

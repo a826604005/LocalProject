@@ -1,0 +1,176 @@
+#header {
+  font-family: 'SourceHanSansCN-Normal';
+  position: fixed;
+  box-sizing: border-box;
+  padding: 22px 138px 17px 120px;
+  height: 71px;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+
+  .icon-notice {
+    width: 14px;
+    height: 14px;
+    background-color: #d94141;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 14px;
+    font-style: normal;
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    padding: 3px;
+    font-size: 12px;
+  }
+
+  > ul {
+    min-width: 1000px;
+
+    > li {
+      display: inline-block;
+      font-size: 1.1em;
+      margin-right: 15px;
+
+      &.app-download-lg {
+        .dropdown-list {
+          border-radius: 4px;
+          padding: 12px;
+          align-items: center;
+          width: 371px;
+
+          img {
+            margin-right: 10px;
+            vertical-align: middle;
+          }
+
+          div {
+            vertical-align: middle;
+            display: inline-block;
+            font-family: SourceHanSansCN-Normal;
+            font-size: 16px;
+            color: #737688;
+            line-height: 24px;
+          }
+
+          strong {
+            color: #374256;
+          }
+        }
+      }
+
+      > a {
+        color: #fff;
+
+        &.inactive {
+          color: #7d8390;
+        }
+      }
+
+      &.logo {
+        margin-right: 42px;
+
+        .icon-logo {
+          margin-right: 6px;
+        }
+
+        .logo-text {
+          font-size: 18px;
+          line-height: 22px;
+
+          strong {
+            font-family: 'SourceHanSansCN-Medium';
+          }
+
+          span {
+            font-family: 'SourceHanSansCN-ExtraLight';
+          }
+        }
+
+        a {
+          font-size: 17px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+
+  .right {
+    float: right;
+    margin-right: 0;
+
+    .search-group {
+      position: relative;
+
+      .icon-search {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      input {
+        background-color: #7c8390;
+        border: none;
+        color: #fff;
+        padding: 6px 30px;
+        padding-right: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  .actions {
+    display: inline-block;
+
+    > li {
+      position: relative;
+      display: inline-block;
+      font-size: 1.1em;
+
+      &.logo {
+        font-size: 1.4em;
+        margin-right: 14px;
+      }
+
+      &.app-download {
+        a {
+          color: #fff;
+          font-size: 14px;
+        }
+
+        .dropdown-list {
+          font-family: SourceHanSansCN-Light;
+          font-size: 14px;
+          letter-spacing: -0.09px;
+          padding: 12px;
+          text-align: center;
+          border-radius: 4px;
+
+          img {
+            display: block;
+            width: 128px;
+            height: 128px;
+            margin-bottom: 3px;
+          }
+
+          p {
+            font-size: 16px;
+            color: #737688;
+            line-height: 20px;
+          }
+
+          strong {
+            color: #374256;
+          }
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 26px;
+      }
+    }
+  }
+}

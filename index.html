@@ -1,19 +1,81 @@
 <!DOCTYPE html>
-<html ng-app="localProject" lang="en">
+<html ng-app="fellowdata">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <script src="vendor/jquery/jquery.js"></script>
-    <script src="vendor/angular/angular.js"></script>
-    <script src="vendor/angular-ui-router/angular-ui-router.js"></script>
-    <script src="vendor/angular-cookies/angular-cookies.js"></script>
-    <link rel="stylesheet" href="app/css/custom.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="description" content="FellowData 是 FellowPlus 旗下互联网创投数据库产品，拥有 15 万互联网公司数据，和最全面的创投数据。高度结构化的投融资信息、应用商店数据等全网数据实时汇聚于此，帮助你进行行研与公司、产品深度调研。">
+    <link rel="Shortcut Icon" href="resources/images/favicon.ico">
+    <link rel="stylesheet" href="/dist/vendor.css">
+    <link rel="stylesheet" href="/dist/app.css">
 
-    <link href="vendor/jcrop/jquery.Jcrop.css" rel="stylesheet" />
-    <script src="vendor/jcrop/jquery.Jcrop.js"></script>
+    <script defer type='text/javascript'>
+        var _vds = _vds || [];
+        window._vds = _vds;
+        (function(){
+            _vds.push(['setAccountId', '815703b1223f459c91a991f81ce43071']);
+            (function() {
+                var vds = document.createElement('script');
+                vds.type='text/javascript';
+                vds.async = true;
+                vds.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'dn-growing.qbox.me/vds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(vds, s);
+            })();
+        })();
+    </script>
+
+    <script defer>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-59385554-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
 </head>
-<body ng-controller="mainCtrl">
-    <div ui-view></div>
+
+<body ng-controller="mainCtrl" ng-keyup="selectList($event)" id="fellowbox">
+<fellowdata-header></fellowdata-header>
+
+<div style="display: none;" id="checkNavi" class="fullpage-mask">
+    <div class="mask-content">
+        <p class="title">您的浏览器不能完全支持 FellowData的所有属性，为了您更好的使用体验，推荐以下浏览器：</p>
+        <ul class="clearfix browserlists">
+            <li>
+                <span class="icon-chrome"></span>
+                <p>Chrome 40.0 以上</p>
+            </li>
+            <li>
+                <span class="icon-firefox"></span>
+                <p>Firefox 30.0 以上</p>
+            </li>
+        </ul>
+        <a href="javascript:;">我知道了</a>
+    </div>
+</div>
+<div style="display: none;" id="mobileNotice" class="fullpage-mask">
+    <div class="mobile-content">
+        <img src="resources/images/pcdata.png"/>
+        <p>
+            <br/>
+            由于 FellowData 数据呈现相对复杂，故测试版暂时未对移动版进行完美适配。我们建议您通过电脑访问本站进行产品的使用。
+            <br/>
+            <br/>
+            我们会尽快进行移动版的适配，为您提供更好的使用体验。
+            <br/>
+            <br/>
+            感谢您的支持！
+            <br/>
+            <br/>
+        </p>
+        <a href="javascript:;">我知道了</a>
+    </div>
+</div>
+
+<div class="fellowdata-container home-load-page" ui-view grid-backtop></div>
+
+<script type="text/javascript" src="/dist/vendor.js"></script>
+<script type="text/javascript" src="/dist/app.js"></script>
 </body>
-<script src="app/js/app.js"></script>
 </html>

@@ -1,0 +1,40 @@
+git branch test1
+git checkout test1
+git status
+ls
+touch test.html
+git add .
+git commit -m 'xxxx'
+git log
+git push origin test1
+git checkout master
+git pull upstream master
+
+1126  50  150
+
+
+git checkout master
+git pull
+git checkout 新分支
+git rebase master
+解决冲突
+git commit
+git status
+按照提示操作
+git push origin xxx -f
+
+git checkout path(路径)  撤销还未提交的改动
+
+master 误提交
+git log -2 (看最近两条log)
+git reset f14dafddfb42ec4cbd6d79739ea4435bbff51884  (根据log的commit标识回退)
+
+合并最近两次 commit：git rebase -i head~2
+
+把这次提交合并到上次的提交中
+git add .
+git commit —-amend
+
+启动服务
+ sudo nginx
+

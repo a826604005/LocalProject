@@ -1,0 +1,58 @@
+<div id="menubox" class="ui-layout-west" ng-controller="menuCtrl">
+  <div style="width:100%;height: 50px; position: absolute; z-index: 1;top:0;left:0;"></div>
+  <div id="accordion">
+    <h3 class="memedaiMerchant" id="firstlogo" style="text-indent: 30px;">
+      <img class="ui-title-icon" src="/app/images/logo.png"><span class="ui-menu-name" style="font-size:16px;">
+      <span style="font-weight: bold;font-size: 16px;color: #FFFFFF;position: relative;">Fellow</span>Data<span class="icon-beta"></span></span>
+    </h3>
+
+    <div></div>
+    <h3 class="memedaiMerchant" ng-click="go('home')">
+      <img class="ui-menu-icon" style="width: 17px; left:17px;" src="/app/images/home/home-icon.png"><span class="ui-menu-name">首页</span>
+    </h3>
+
+    <div></div>
+    <h3 class="memedaiMerchant" ng-click="go('project_list')">
+      <img class="ui-menu-icon"  src="/app/images/home/project-icon.png"><span class="ui-menu-name">项目</span>
+    </h3>
+
+    <div></div>
+    <h3 class="memedaiMerchant" ng-click="go('public_folder_list')">
+      <img class="ui-menu-icon"  src="/app/images/home/pub-fav-icon.png"><span class="ui-menu-name">公共收藏夹</span>
+    </h3>
+
+    <div></div>
+    <h3 class="memedaiMerchant showclass">
+      <img class="ui-menu-icon" src="/app/images/home/found-icon.png"><span class="ui-menu-name">发现</span>
+    </h3>
+
+    <div>
+      <div class="menu-link-hr"></div>
+      <p class="menu-link" ng-click="go('package_list', {kind: 'ios'})">
+        <img src="/app/images/home/menu-circle.png"><span>苹果应用</span>
+      </p>
+      <div class="menu-link-hr"></div>
+      <p class="menu-link" ng-click="go('package_list', {kind: 'android'})">
+        <img src="/app/images/home/menu-circle.png"><span>安卓应用</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="not-online-box">
+    <div class="menu-not-online" style="margin-top: 90px;border-bottom: 0;">
+      <img style="width: 65px;float:left; margin-left:20px;margin-top:18px;" src="/app/images/home/not-online.png">
+    </div>
+    <div class="menu-not-online">
+      <img style="width: 14px;float:left; margin-left:20px;margin-top:16px;" src="/app/images/home/not-online2.png">
+      <span style="opacity: 0.3;float:left;margin-left: 21px;">融资事件</span>
+    </div>
+    <div style="width: 100%; height: 50px; text-align: center; line-height: 50px; border-bottom: 1px solid #2E384D; color:#FFFFFF;">
+      <img style="width: 14px;float:left; margin-left:20px;margin-top:17px;" src="/app/images/home/not-online3.png">
+      <span style="opacity: 0.3;float:left;margin-left: 21px;">投资机构</span>
+    </div>
+  </div>
+
+  <a class="menu-feedback" ng-click="showFeedback()">
+    <span class="icon-feedback"></span><span class="feedback-letters">我要报错</span>
+  </a>
+</div>

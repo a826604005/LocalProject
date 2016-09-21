@@ -21,7 +21,7 @@ module.exports = function (grunt) {
         options: {livereload:true}
       },
       js: {
-        files: ['resources/js/**/*.js'],
+        files: ['app/pages/**/*.js'],
         tasks: ['concat'],
         options: {livereload:true}
       },
@@ -43,8 +43,14 @@ module.exports = function (grunt) {
       },
       dist1: {
         src: [
-                paths.scripts + '**/*.js'
-              ],
+          'app/pages/**/*.js'
+        ],
+        dest: 'dist/app.js'
+      },
+      dist2: {
+        src: [
+          paths.scripts + '**/*.js'
+        ],
         dest: 'app/js/app.js'
       }
     },

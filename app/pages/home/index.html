@@ -1,0 +1,111 @@
+<main id="home">
+  <section class="search-container">
+    <h1>全网最全的创投数据库</h1>
+
+    <div class="input-group">
+      <input
+        ng-model="vm.keyword"
+        ng-keyup="vm.search($event)"
+        type="search"
+        placeholder="输入项目名">
+      <button ng-click="vm.search()" class="btn-search">搜索</button>
+    </div>
+
+    <div class="home-tags">
+      <span>热门搜索：</span>
+      <a ng-repeat="tag in vm.trendKeywords" ng-href="#/search/{{tag}}">{{ tag }}</a>
+    </div>
+
+    <div class="qrcode-appdownload">
+      <img src="//fellowdata-file.oss-cn-hangzhou.aliyuncs.com/static/qrcode-app-download.png">
+      <div>
+        <p>登录手机微信，进入“扫一扫”</p>
+        <p>扫码下载<strong>FellowData App</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="data-container">
+    <p class="home-data-title" ng-cloak>
+      <span>我们已收录</span>
+      <strong>{{ vm.totalProjects }}</strong>
+      <span>个互联网公司项目，其中独家挖掘项目数达到</span>
+      <strong>{{ vm.uniqueProjects }}</strong>
+      <span>个</span>
+    </p>
+
+    <div id="chart-container"></div>
+  </section>
+
+  <section class="project-container">
+    <p class="home-project-title">最新融资项目</p>
+    <ul class="project-item-container">
+      <li
+        ng-click="$root.$state.go('project.intro', { id: project.id })"
+        ng-repeat="project in ::vm.projects"
+        class="project-item">
+        <div class="project-body clearfix">
+          <img ng-src="{{ project.image_url || '/app/images/logo-default.png' }}" alt="icon">
+          <p class="project-name" ng-bind="project.name"></p>
+
+          <span class="project-round" ng-bind="project.last_round"></span>
+
+          <div>
+            <i class="icon icon-tag"></i>
+            <span ng-bind="project.biz_domain"></span>
+            <i class="icon icon-location"></i>
+            <span ng-bind="project.location"></span>
+          </div>
+        </div>
+
+        <footer ng-bind="project.brief_intro || '暂无项目介绍'"></footer>
+      </li>
+    </ul>
+
+    <button ng-click="$root.$state.go('project_list')">查看全部项目</button>
+  </section>
+
+  <footer class="container">
+    <ul class="home-about">
+      <li class="link-abount">
+        <a href="//fellowplus.com/about" target="_blank">关于我们</a>
+      </li>
+      <li>
+        <a href="//fellowplus.com/careers" target="_blank">加入我们</a>
+      </li>
+      <li>
+        <a href="//fellowplus.com/contact" target="_blank">联系我们</a>
+      </li>
+    </ul>
+
+    <ul class="home-public">
+      <li id="wechat-qrcode">
+        <div class="qrcode-container">
+          <img src="/app/images/wechat-qrcode.png" alt="qrcode">
+          <i class="icon-arrow-down"></i>
+        </div>
+        <a href="Javascript:;">微信公众号</a>
+      </li>
+      <li>
+        <a href="//zhuanlan.zhihu.com/FellowPlus" target="_blank">知乎专栏</a>
+      </li>
+      <li>
+        <a href="//v.qq.com/vplus/fellowplus" target="_blank">腾讯视频</a>
+      </li>
+      <li>
+        <a href="//i.youku.com/fellowplus" target="_blank">优酷视频</a>
+      </li>
+    </ul>
+
+    <ul class="home-policy">
+      <li class="link-service">
+        <a href="//fellowplus.com/service-agreement" target="_blank">服务协议</a>
+      </li>
+      <li class="link-privacy">
+        <a href="//fellowplus.com/privacy-policy" target="_blank">隐私政策</a>
+      </li>
+      <li>版权所有&nbsp;FellowPlus</li>
+    </ul>
+  </footer>
+</main>
+
